@@ -350,15 +350,71 @@ timestamp_ms,ax,ay,az,gx,gy,gz,note
 ✔ Clean structure for expansion  
 ✔ PlatformIO‑ready project  
 ✔ CSV template for logging  
-✔ No hallucinated libraries or functions  
+✔ No hallucinated libraries or functions 
 
-This is a solid foundation.  
-Next step is your call — we can build:
+---
 
-- The **SD card logging system**  
-- The **CSV writer**  
-- The **Bluetooth IMU streaming**  
-- The **3D visualiser pipeline**  
-- The **GPS‑over‑Bluetooth receiver**  
+## 🧩 Code Overview
 
-Which piece do you want to implement next?
+### `main.cpp`
+- Initializes M5Unified  
+- Displays splash screen  
+- Launches main menu  
+
+### `menu.cpp / menu.h`
+- Handles menu navigation  
+- Routes to IMU mode, GPS info pages, and Info section  
+
+### `imu_mode.cpp / imu_mode.h`
+- Fully working IMU reader  
+- Displays live accelerometer data  
+- Contains commented hooks for:  
+  - SD logging  
+  - CSV writing  
+  - Bluetooth streaming  
+
+### `gps_phone.cpp / gps_phone.h`
+- Informational placeholder  
+- Explains future phone‑GPS integration  
+- Lists recommended apps  
+
+### `gps_external.cpp / gps_external.h`
+- Informational placeholder  
+- Lists supported GPS modules  
+- Notes on wiring and expected features  
+
+### `info.cpp / info.h`
+- About page  
+- Version info  
+- Future space for:  
+  - Saved session viewer  
+  - Settings menu  
+
+### `data/log_template.csv`
+- Starter CSV header for IMU logging  
+
+---
+
+## 🛠️ Requirements
+
+- **VS Code**  
+- **PlatformIO extension**  
+- **M5Stack Cardputer ADV**  
+- Libraries (auto‑installed via `platformio.ini`):  
+  - `M5Unified`  
+  - `M5GFX`  
+
+---
+
+## 🚀 Getting Started
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/MotionTraceADV.git
+   ```
+2. Open the folder in VS Code  
+3. PlatformIO will auto‑install dependencies  
+4. Build & upload to the Cardputer  
+5. Enjoy the IMU mode and explore the menu system  
+
+---
