@@ -1,4 +1,5 @@
 #include <M5Unified.h>
+#include <M5Cardputer.h>
 #include "gps_phone.h"
 
 void showPhoneGPSInfo() {
@@ -19,10 +20,10 @@ void showPhoneGPSInfo() {
     M5.Display.println("- GPS2Bluetooth (Android)");
     M5.Display.println("- BLE GPS Streamer (iOS)");
     M5.Display.println("");
-    M5.Display.println("Press B to return.");
+    M5.Display.println("Press Del to return.");
 
     while (true) {
-        M5.update();
-        if (M5.BtnB.wasPressed()) return;
+        M5Cardputer.update();
+        if (M5Cardputer.Keyboard.isKeyPressed(KEY_BACKSPACE)) return;
     }
 }

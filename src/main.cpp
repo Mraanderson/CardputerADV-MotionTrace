@@ -1,9 +1,10 @@
 #include <M5Unified.h>
 #include "menu.h"
+#include <M5Cardputer.h>
 
 void setup() {
     auto cfg = M5.config();
-    M5.begin(cfg);
+    M5Cardputer.begin(cfg, true);
 
     // Splash screen
     M5.Display.fillScreen(BLACK);

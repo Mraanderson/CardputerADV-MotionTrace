@@ -1,4 +1,5 @@
 #include <M5Unified.h>
+#include <M5Cardputer.h>
 #include "gps_external.h"
 
 void showExternalGPSInfo() {
@@ -15,10 +16,10 @@ void showExternalGPSInfo() {
     M5.Display.println("- M5Stack GPS Cap");
     M5.Display.println("- NEO-6M / NEO-M8N UART");
     M5.Display.println("");
-    M5.Display.println("Press B to return.");
+    M5.Display.println("Press Del to return.");
 
     while (true) {
-        M5.update();
-        if (M5.BtnB.wasPressed()) return;
+        M5Cardputer.update();
+        if (M5Cardputer.Keyboard.isKeyPressed(KEY_BACKSPACE)) return;
     }
 }
